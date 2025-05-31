@@ -1,0 +1,37 @@
+body {
+    background-color: pink;
+    font-family: Arial, sans-serif;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column; /* Sắp xếp nội dung theo chiều dọc */
+    align-items: center;
+    min-height: 100vh;
+    height: auto; /* Đảm bảo nội dung mở rộng theo chiều dài */
+    overflow-y: auto; /* Cho phép cuộn theo chiều dọc */
+    opacity: 0;
+    animation: fadeIn 2s ease-in forwards;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Khoảng cách giữa hai ảnh */
+    flex-wrap: wrap; /* Đảm bảo ảnh không bị tràn */
+}
+
+.image-container img {
+    width: 300px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.text-container {
+    text-align: center; /* Căn giữa nội dung */
+    font-size: 20px;
+    color: deeppink;
+    line-height: 1.6;
+    margin-top: 20px; /* Tạo khoảng cách giữa ảnh và chữ */
+    width: 90%; /* Giữ văn bản gọn gàng */
+    max-width: 800px; /* Tránh văn bản quá dài */
+    padding-bottom: 50px; /* Thêm khoảng trống dưới để dễ cuộn hơn */
+}

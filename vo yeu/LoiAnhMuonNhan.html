@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lá Thư Tâm Sự</title>
+    <style>
+        body {
+            background-color: pink;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding-top: 30px;
+        }
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .envelope-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .image-left, .image-right {
+            width: 200px;
+            height: auto;
+            position: absolute;
+            top: 90%;
+            transform: translateY(-50%);
+        }
+        .image-left {
+            left: -250px;
+        }
+        .image-right {
+            right: -250px;
+        }
+        .envelope {
+            width: 300px;
+            height: 180px;
+            background-color: #ff4081;
+            position: relative;
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+        }
+        .letter {
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 250px;
+            height: 300px;
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: opacity 0.7s ease-in-out, top 0.7s ease-in-out;
+        }
+        .heart {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: red;
+            border-radius: 50%;
+            animation: fall 3s linear infinite;
+        }
+        @keyframes fall {
+            0% { transform: translateY(0px); opacity: 1; }
+            100% { transform: translateY(600px); opacity: 0; }
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background-color: #ff4081;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Vợ yêu bấm vào đi, anh có điều muốn nói!</div>
+        <div class="envelope-container">
+            <img src="anh3.jpg" alt="Ảnh trái" class="image-left">
+            <div class="envelope" onclick="openLetter()"></div>
+            <img src="anh4.jpg" alt="Ảnh phải" class="image-right">
+        </div>
+        <div class="letter" id="letter">
+            <p>Cam on vo da yeu anhhh</p>
+            <p>2 tháng qua cta đã chịu tính nhau rất gioi phải không anh mong rằng cta sẽ còn đi chặn đường</p>
+            <p>dài hơn nữa , yêu nhau nhiều hơn , hiểu nhau và thông cảm cho nhau , nếu sai cta cùng sửa không ai bỏ ai </p>
+            <p>em nhé , cuối cùng thì cảm ơn em vì đã yêu anh , cảm ơn em vì đã chịu tính anh , chuc mừng ngày 1/6 em be của anh</p>
+        </div>
+        <div class="button-container">
+            <a href="main3.html" class="button">Quay lại</a>
+        </div>
+    </div>
+
+    <script>
+        function createHearts() {
+            setInterval(() => {
+                let heart = document.createElement("div");
+                heart.className = "heart";
+                heart.style.left = Math.random() * window.innerWidth + "px";
+                heart.style.top = "-50px";
+                heart.style.animationDuration = (Math.random() * 2 + 3) + "s";
+                document.body.appendChild(heart);
+                setTimeout(() => heart.remove(), 4000);
+            }, 300);
+        }
+
+        function openLetter() {
+            let letter = document.getElementById("letter");
+            letter.style.opacity = "1";
+        }
+
+        window.onload = function() {
+            createHearts();
+        };
+    </script>
+</body>
+</html>

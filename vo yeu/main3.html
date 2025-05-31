@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Mật khẩu vợ iu</title>
+    <script src="NgayYeu.html"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background-image: url("background.png");
+            /* ảnh nền đã ghép 4 ảnh */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding-top: 100px;
+        }
+
+        #message {
+            display: none;
+            font-size: 30px;
+            color: deeppink;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 20px 30px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .image-row {
+            display: none;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 90%;
+            margin-bottom: 60px;
+        }
+
+        .image-row img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .image-row img:hover {
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .heart {
+            position: fixed;
+            top: -50px;
+            font-size: 30px;
+            color: red;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html lang="vi">
+
+    <head>
+        <meta charset="UTF-8" />
+        <title>Mật khẩu vợ iu</title>
+    </head>
+    <script>
+        function goToPage(page) {
+            window.location.href = page; // Chuyển hướng đến trang mong muốn
+        }
+    </script>
+    <script>
+        function createHeart() {
+            let heart = document.createElement("div");
+            heart.innerHTML = "❤️"; // Biểu tượng trái tim
+            heart.classList.add("heart");
+            heart.style.left = Math.random() * window.innerWidth + "px";
+            heart.style.animationDuration = Math.random() * 1.5 + 1.5 + "s"; // Giảm thời gian để trái tim rơi nhanh hơn
+            heart.style.fontSize = Math.random() * 20 + 20 + "px"; // Kích thước ngẫu nhiên từ 20px đến 40px
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 3000); // Xóa trái tim sau 3 giây để tránh làm chậm trang
+        }
+
+        setInterval(createHeart, 200); // Giảm thời gian tạo trái tim xuống còn 200ms để nhiều trái tim xuất hiện hơn
+    </script>
+
+
+    <body bgcolor="pink" background="background.png">
+        <div id="message"
+            style="display: none; font-size: 30px; color: deeppink; text-align: center; background-color: rgba(255, 255, 255, 0.7); padding: 20px 30px; border-radius: 20px; margin-bottom: 40px; animation: fadeIn 1s ease-in-out;">
+            😘 aaa đúng roii đó bbi mời em lựa chọn 😘
+        </div>
+
+        <div class="image-row" id="imageRow"
+            style="display: none; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 90%; margin-bottom: 60px;">
+
+            <div style="text-align: center;">
+                <img src="anh4.jpg" alt="Ảnh 1"
+                    style="width: 150px; height: 150px; object-fit: cover; border-radius: 15px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);">
+                <br>
+                <button onclick="goToPage('NgayYeu.html')"
+                    style="background: linear-gradient(45deg, #ff69b4, #ff1493); color: white; font-size: 18px; padding: 10px 20px; border: none; border-radius: 25px; cursor: pointer; transition: all 0.3s ease;"
+                    onmouseover="this.style.filter='brightness(1.2)'" onmouseout="this.style.filter='brightness(1)'">
+                    Ngày yêu nhau
+                </button>
+            </div>
+
+            <div style="text-align: center;">
+                <img src="anh2.jpg" alt="Ảnh 2"
+                    style="width: 150px; height: 150px; object-fit: cover; border-radius: 15px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);">
+                <br>
+                <button onclick="goToPage('EmDoAnh.html')"
+                    style="background: linear-gradient(45deg, #ff69b4, #ff1493); color: white; font-size: 18px; padding: 10px 20px; border: none; border-radius: 25px; cursor: pointer; transition: all 0.3s ease;"
+                    onmouseover="this.style.filter='brightness(1.2)'" onmouseout="this.style.filter='brightness(1)'">
+                    Những lần em dỗ anh
+                </button>
+            </div>
+
+            <div style="text-align: center;">
+                <img src="anh3.jpg" alt="Ảnh 3"
+                    style="width: 150px; height: 150px; object-fit: cover; border-radius: 15px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);">
+                <br>
+                <button onclick="goToPage('EmNoiYeuAnh.html')"
+                    style="background: linear-gradient(45deg, #ff69b4, #ff1493); color: white; font-size: 18px; padding: 10px 20px; border: none; border-radius: 25px; cursor: pointer; transition: all 0.3s ease;"
+                    onmouseover="this.style.filter='brightness(1.2)'" onmouseout="this.style.filter='brightness(1)'">
+                    Những lần em nói yêu anh
+                </button>
+            </div>
+
+            <div style="text-align: center;">
+                <img src="anh1.jpg" alt="Ảnh 4"
+                    style="width: 150px; height: 150px; object-fit: cover; border-radius: 15px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);">
+                <br>
+                <button onclick="goToPage('LoiAnhMuonNhan.html')"
+                    style="background: linear-gradient(45deg, #ff69b4, #ff1493); color: white; font-size: 18px; padding: 10px 20px; border: none; border-radius: 25px; cursor: pointer; transition: all 0.3s ease;"
+                    onmouseover="this.style.filter='brightness(1.2)'" onmouseout="this.style.filter='brightness(1)'">
+                    Lời anh muốn nhắn
+                </button>
+            </div>
+
+        </div>
+
+        </div>
+
+
+        <script>
+            let pass = prompt("Mời nhập pass vợ iu:");
+            if (pass === "15072011") {
+                document.getElementById("message").style.display = "block";
+                document.getElementById("imageRow").style.display = "flex";
+            } else {
+                alert("Sai mật khẩu rồi nha 😢");
+            }
+        </script>
+    </body>
+
+    </html>
+
+    </script>
+</body>
+
+</html>

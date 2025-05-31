@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Những lần em dỗ anh</title>
+    <style>
+        body {
+            background-color: #ffd1dc; /* Nền hồng nhạt */
+            text-align: center;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Căn giữa theo chiều dọc */
+            margin: 0;
+            overflow: hidden; /* Ngăn cuộn khi trái tim rơi */
+            opacity: 0; /* Bắt đầu với độ mờ */
+            animation: fadeIn 2s ease-in forwards; /* Hiệu ứng sáng dần */
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        .image-container {
+            display: flex;
+            justify-content: center; /* Căn giữa ảnh theo chiều ngang */
+            gap: 15px; /* Khoảng cách giữa các ảnh */
+        }
+        .image-item {
+            display: flex;
+            flex-direction: column; /* Xếp dọc ảnh và lời nhắn */
+            align-items: center;
+            opacity: 0; /* Ẩn ảnh ban đầu */
+            animation: appear 2s ease-in forwards;
+        }
+        img {
+            width: 200px;
+            border-radius: 10px; /* Bo góc mềm mại */
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+        img:hover {
+            transform: scale(1.05); /* Hiệu ứng phóng to nhẹ khi di chuột */
+        }
+        .message {
+            font-size: 18px;
+            font-weight: bold;
+            color: #ff4081;
+            margin-top: 10px;
+        }
+        .heart {
+            position: absolute;
+            color: red;
+            font-size: 24px;
+            animation: fall 3s linear infinite; /* Rơi nhanh hơn */
+        }
+        @keyframes fall {
+            0% { transform: translateY(-100px); opacity: 1; }
+            100% { transform: translateY(100vh); opacity: 0; }
+        }
+        @keyframes appear {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .image-item:nth-child(1) { animation-delay: 0.5s; }
+        .image-item:nth-child(2) { animation-delay: 1s; }
+        .image-item:nth-child(3) { animation-delay: 1.5s; }
+
+        /* Hiệu ứng popup */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .popup img {
+            width: 50%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <div class="image-item">
+            <img src="EmDoAnh.jpg" alt="Ảnh 1" onclick="showPopup(this)">
+            <p class="message">Cảm ơn em lúc đó đã yêu anh ❤️</p>
+        </div>
+        <div class="image-item">
+            <img src="EmDoAnh2.jpg" alt="Ảnh 2" onclick="showPopup(this)">
+            <p class="message">Cảm ơn em đã tin tưởng anh nhiều lắm 😘</p>
+        </div>
+        <div class="image-item">
+            <img src="EmDoAnh3.jpg" alt="Ảnh 3" onclick="showPopup(this)">
+            <p class="message">Cảm ơn em đã dỗ dành anh hết ngày này qua ngày khác 💕</p>
+        </div>
+    </div>
+     <div class="button-container">
+            <button class="back-button" onclick="window.location.href='main3.html'">
+                ⬅️ Quay lại trang chính
+            </button>
+        </div>  
+
+    <!-- Popup hiển thị ảnh lớn -->
+    <div class="popup" id="popup" onclick="hidePopup()">
+        <img id="popupImg" src="" alt="Ảnh lớn">
+    </div>
+
+    <script>
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.innerHTML = "❤️";
+            heart.style.left = Math.random() * window.innerWidth + "px";
+            heart.style.top = "-10px";
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 3000); // Rơi nhanh hơn
+        }
+
+        setInterval(createHeart, 150); // Tạo nhiều trái tim hơn
+
+        function showPopup(img) {
+            document.getElementById("popupImg").src = img.src;
+            document.getElementById("popup").style.display = "flex";
+        }
+
+        function hidePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+    </script>
+</body>
+</html>
